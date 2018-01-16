@@ -35,9 +35,9 @@ window.onload = function () {
     var len = arr.length;
 
     for (var i = 0; i < len; i++) {
-        if (arr[i] === num) {
-          return i
-        }
+      if (arr[i] === num) {
+        return i
+      }
     }
     return -1;
   }
@@ -54,7 +54,34 @@ window.onload = function () {
   }
 
   function isBalanced(str) {
+    if (str.indexOf('}{') >= 0) {
+      return false
+    }
+    var parentheses = "[]{}()";
+    var stack = []; //Parentheses stack
+    var i; //Index in the string
+    var character; //Character in the string
 
+    for (i = 0; character = str[i++];) {
+
+      var bracePosition = parentheses.indexOf(character);
+      var braceType;
+
+      if (!~bracePosition) {
+        continue;
+      }
+
+      braceType = bracePosition % 2 ? 'closed' : 'open';
+
+      if (braceType === 'closed') {
+        if (!stack.length || parentheses.indexOf(stack.pop()) != bracePosition - 1)
+          return false;
+      } else {
+        stack.push(character);
+      }
+    }
+
+    return !stack.length;
   }
 
   console.group('isPrime');
@@ -106,7 +133,7 @@ window.onload = function () {
   console.groupEnd();
 
 
-  console.group('missing');
+  console.group('Missing');
   console.info(missing([]), 'right answer is : undefined ');
   console.info(missing([1, 4, 3]), 'right answer is : 2 ');
   console.info(missing([2, 3, 4]), 'right answer is : 1 ');

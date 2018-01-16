@@ -20,12 +20,14 @@ window.onload = function () {
 
 
   function isSorted(arr) {
-
+    return arr.every(function (x, i) {
+      return i === 0 || x >= arr[i - 1];
+    });
   }
 
 
   function reverse(str) {
-
+    return str.split("").reverse().join("");
   }
 
 

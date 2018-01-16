@@ -15,7 +15,5 @@
     
 ##### Please press F12 to see result  
     
-### Link to: 
-    
-    * [a link](https://sergii5854.github.io/hw-js-12.2-function.github.io/) .
+### Link to: [view](https://sergii5854.github.io/hw-js-12.2-function.github.io/) .
 

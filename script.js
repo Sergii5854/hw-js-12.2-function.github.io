@@ -50,7 +50,19 @@ window.onload = function () {
 
 
   function missing(array) {
+    var missing = undefined;
+    var sorted = array.sort(function (a, b) {
+      return a - b;
+    });
+    var max = Math.max.apply(null, array);
 
+    for (var i = 1; i < max; i++) {
+      if (sorted.indexOf(i) === -1) {
+
+        return missing = i
+      }
+    }
+    return missing
   }
 
   function isBalanced(str) {

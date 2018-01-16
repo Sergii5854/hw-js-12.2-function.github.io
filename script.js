@@ -32,12 +32,20 @@ window.onload = function () {
 
 
   function indexOf(arr, num) {
+    var len = arr.length;
 
+    for (var i = 0; i < len; i++) {
+        if (arr[i] === num) {
+          return i
+        }
+    }
+    return -1;
   }
 
 
   function isPalindrome(str) {
-
+    str = str.toLowerCase().replace(/\s/g, '');
+    return str === str.split("").reverse().join("") ? true : false;
   }
 
 
@@ -79,7 +87,7 @@ window.onload = function () {
   console.groupEnd();
 
 
-  console.group('reverse');
+  console.group('Reverse');
   console.info(reverse(''), 'right answer is : "" ');
   console.info(reverse('abcdef'), 'right answer is : fedcba ');
   console.groupEnd();

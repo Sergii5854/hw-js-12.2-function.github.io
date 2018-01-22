@@ -10,14 +10,22 @@ window.onload = function () {
 
 // factorial - Returns a number that is the factorial of the given number.
   function factorial(num) {
-    return (num < 2) ? 1 : factorial(num - 1) * num;
+    if (num < 2) {
+      return 1
+    } else {
+      return factorial(num - 1) * num;
+    }
   }
 
 // fib - Returns the nth Fibonacci number.
   function fib(num) {
-    return num < 1 ? 0
-        : num <= 2 ? 1
-            : fib(num - 1) + fib(num - 2);
+    if(num < 1){
+      return 0;
+    }else if(num <= 2){
+      return 1;
+    }else{
+      return fib(num - 1) + fib(num - 2);
+    }
   }
 
 // isSorted - Returns true or false, indicating whether the given array of numbers is sorted.

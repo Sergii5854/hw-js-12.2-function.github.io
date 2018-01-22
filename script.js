@@ -1,5 +1,6 @@
 window.onload = function () {
 
+// isPrime - Returns true or false, indicating whether the given number is prime.
   function isPrime(num) {
     for (var i = 2; i < num; i++) {
       if (num % i === 0) return false;
@@ -7,30 +8,31 @@ window.onload = function () {
     return num > 1;
   }
 
+// factorial - Returns a number that is the factorial of the given number.
   function factorial(num) {
     return (num < 2) ? 1 : factorial(num - 1) * num;
   }
 
-
+// fib - Returns the nth Fibonacci number.
   function fib(num) {
     return num < 1 ? 0
         : num <= 2 ? 1
             : fib(num - 1) + fib(num - 2);
   }
 
-
+// isSorted - Returns true or false, indicating whether the given array of numbers is sorted.
   function isSorted(arr) {
     return arr.every(function (x, i) {
       return i === 0 || x >= arr[i - 1];
     });
   }
 
-
+// reverse - Reverses the given string (yes, using the built in reverse function is cheating).
   function reverse(str) {
     return str.split("").reverse().join("");
   }
 
-
+//indexOf - Implement the indexOf function for arrays.
   function indexOf(arr, num) {
     var len = arr.length;
 
@@ -42,13 +44,13 @@ window.onload = function () {
     return -1;
   }
 
-
+// isPalindrome - Return true or false indicating whether the given string is a plaindrone (case and space insensitive).
   function isPalindrome(str) {
     str = str.toLowerCase().replace(/\s/g, '');
     return str === str.split("").reverse().join("") ? true : false;
   }
 
-
+// missing - Takes an unsorted array of unique numbers (ie. no repeats) from 1 through some number n, and returns the missing number in the sequence (there are either no missing numbers, or exactly one missing number). Can you do it in O(N) time? Hint: There’s a clever formula you can use.
   function missing(array) {
     var missing = undefined;
     var sorted = array.sort(function (a, b) {
@@ -65,6 +67,7 @@ window.onload = function () {
     return missing
   }
 
+// isBalanced - Takes a string and returns true or false indicating whether its curly braces are balanced.
   function isBalanced(str) {
     if (str.indexOf('}{') >= 0) {
       return false
